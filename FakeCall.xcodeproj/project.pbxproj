@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA5C1F818191007C216D /* AppDelegate.swift */; };
-		188BEA5F1F818191007C216D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA5E1F818191007C216D /* ViewController.swift */; };
 		188BEA621F818191007C216D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA601F818191007C216D /* Main.storyboard */; };
 		188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA631F818191007C216D /* FakeCall.xcdatamodeld */; };
 		188BEA671F818191007C216D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA661F818191007C216D /* Assets.xcassets */; };
 		188BEA6A1F818191007C216D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA681F818191007C216D /* LaunchScreen.storyboard */; };
 		188BEA751F818191007C216D /* FakeCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA741F818191007C216D /* FakeCallTests.swift */; };
 		188BEA801F818191007C216D /* FakeCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA7F1F818191007C216D /* FakeCallUITests.swift */; };
+		188BEA8E1F818342007C216D /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA8D1F818342007C216D /* HomePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		188BEA591F818191007C216D /* FakeCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188BEA5C1F818191007C216D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		188BEA5E1F818191007C216D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		188BEA611F818191007C216D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		188BEA641F818191007C216D /* FakeCall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FakeCall.xcdatamodel; sourceTree = "<group>"; };
 		188BEA661F818191007C216D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		188BEA7B1F818191007C216D /* FakeCallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeCallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188BEA7F1F818191007C216D /* FakeCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCallUITests.swift; sourceTree = "<group>"; };
 		188BEA811F818191007C216D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188BEA8D1F818342007C216D /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				188BEA5C1F818191007C216D /* AppDelegate.swift */,
-				188BEA5E1F818191007C216D /* ViewController.swift */,
+				188BEA8D1F818342007C216D /* HomePageViewController.swift */,
 				188BEA601F818191007C216D /* Main.storyboard */,
 				188BEA661F818191007C216D /* Assets.xcassets */,
 				188BEA681F818191007C216D /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188BEA5F1F818191007C216D /* ViewController.swift in Sources */,
+				188BEA8E1F818342007C216D /* HomePageViewController.swift in Sources */,
 				188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */,
 				188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */,
 			);
