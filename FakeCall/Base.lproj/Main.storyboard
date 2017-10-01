@@ -16,10 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="i7H-Ru-Vw1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wtm-Jf-qoO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wtm-Jf-qoO" firstAttribute="top" secondItem="vdB-5F-Bge" secondAttribute="top" id="KVq-9t-iYo"/>
+                            <constraint firstItem="Wtm-Jf-qoO" firstAttribute="leading" secondItem="vdB-5F-Bge" secondAttribute="leading" id="RFE-1q-FyT"/>
+                            <constraint firstItem="vdB-5F-Bge" firstAttribute="trailing" secondItem="Wtm-Jf-qoO" secondAttribute="trailing" id="Xwf-1H-tQV"/>
+                            <constraint firstItem="vdB-5F-Bge" firstAttribute="bottom" secondItem="Wtm-Jf-qoO" secondAttribute="bottom" id="khx-Bl-JPQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vdB-5F-Bge"/>
                     </view>
                     <navigationItem key="navigationItem" id="tCM-cB-YxW"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wtm-Jf-qoO" id="Ppb-pi-Dte"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKG-il-XJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
