@@ -15,6 +15,9 @@
 		188BEA751F818191007C216D /* FakeCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA741F818191007C216D /* FakeCallTests.swift */; };
 		188BEA801F818191007C216D /* FakeCallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA7F1F818191007C216D /* FakeCallUITests.swift */; };
 		188BEA8E1F818342007C216D /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA8D1F818342007C216D /* HomePageViewController.swift */; };
+		188BEA971F819318007C216D /* HomePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA951F819318007C216D /* HomePageCell.swift */; };
+		188BEA981F819318007C216D /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA961F819318007C216D /* HomePageCell.xib */; };
+		188BEA9B1F81A25B007C216D /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA9A1F81A25B007C216D /* TimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		188BEA7F1F818191007C216D /* FakeCallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCallUITests.swift; sourceTree = "<group>"; };
 		188BEA811F818191007C216D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188BEA8D1F818342007C216D /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		188BEA951F819318007C216D /* HomePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCell.swift; sourceTree = "<group>"; };
+		188BEA961F819318007C216D /* HomePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
+		188BEA9A1F81A25B007C216D /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		188BEA5B1F818191007C216D /* FakeCall */ = {
 			isa = PBXGroup;
 			children = (
+				188BEA931F819275007C216D /* View */,
 				188BEA5C1F818191007C216D /* AppDelegate.swift */,
 				188BEA8D1F818342007C216D /* HomePageViewController.swift */,
 				188BEA601F818191007C216D /* Main.storyboard */,
@@ -106,6 +113,7 @@
 				188BEA681F818191007C216D /* LaunchScreen.storyboard */,
 				188BEA6B1F818191007C216D /* Info.plist */,
 				188BEA631F818191007C216D /* FakeCall.xcdatamodeld */,
+				188BEA9A1F81A25B007C216D /* TimeViewController.swift */,
 			);
 			path = FakeCall;
 			sourceTree = "<group>";
@@ -126,6 +134,23 @@
 				188BEA811F818191007C216D /* Info.plist */,
 			);
 			path = FakeCallUITests;
+			sourceTree = "<group>";
+		};
+		188BEA931F819275007C216D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				188BEA941F819281007C216D /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		188BEA941F819281007C216D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				188BEA951F819318007C216D /* HomePageCell.swift */,
+				188BEA961F819318007C216D /* HomePageCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +263,7 @@
 				188BEA6A1F818191007C216D /* LaunchScreen.storyboard in Resources */,
 				188BEA671F818191007C216D /* Assets.xcassets in Resources */,
 				188BEA621F818191007C216D /* Main.storyboard in Resources */,
+				188BEA981F819318007C216D /* HomePageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				188BEA8E1F818342007C216D /* HomePageViewController.swift in Sources */,
+				188BEA9B1F81A25B007C216D /* TimeViewController.swift in Sources */,
 				188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */,
 				188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */,
+				188BEA971F819318007C216D /* HomePageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
