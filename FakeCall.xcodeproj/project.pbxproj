@@ -11,6 +11,7 @@
 		1802567F1F843EA900DC1021 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802567E1F843EA900DC1021 /* RingViewController.swift */; };
 		1846E5251F880F9800DAC321 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E5241F880F9800DAC321 /* WaitViewController.swift */; };
 		1881A98B1F8B6E14003AB947 /* FakeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881A98A1F8B6E14003AB947 /* FakeHomeViewController.swift */; };
+		1881A98E1F8BC392003AB947 /* DefaultRingtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1881A98D1F8BBD8F003AB947 /* DefaultRingtone.mp3 */; };
 		188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA5C1F818191007C216D /* AppDelegate.swift */; };
 		188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA631F818191007C216D /* FakeCall.xcdatamodeld */; };
 		188BEA671F818191007C216D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA661F818191007C216D /* Assets.xcassets */; };
@@ -288,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1881A98E1F8BC392003AB947 /* DefaultRingtone.mp3 in Resources */,
 				188BEA6A1F818191007C216D /* LaunchScreen.storyboard in Resources */,
 				188BEA671F818191007C216D /* Assets.xcassets in Resources */,
 				18CDF81B1F81B9AE0037261C /* Main2.storyboard in Resources */,
