@@ -22,7 +22,9 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         
     
-
+        UserDefaults.standard.set(true, forKey: "soundSwitchIsOn")
+        UserDefaults.standard.set(true, forKey: "vibrationSwitchIsOn")
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,11 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
         let systemSoundID: SystemSoundID = 1305
         // to play sound
         AudioServicesPlaySystemSound (systemSoundID)
+            print("açık")
+        }
+        else{
+            UserDefaults.standard.set(false, forKey: "soundSwitchIsOn")
+            print("kapalı")
         }
         
     }
@@ -58,6 +65,8 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func vibrationSwitch(_ sender: UISwitch) {
         if sender.isOn {
             UserDefaults.standard.set(true, forKey: "vibrationSwitchIsOn")
+        }else{
+            UserDefaults.standard.set(false, forKey: "vibrationSwitchIsOn")
         }
     }
     
