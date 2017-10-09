@@ -13,13 +13,17 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     var imageList = [#imageLiteral(resourceName: "img1"),#imageLiteral(resourceName: "img2"),#imageLiteral(resourceName: "img2")]
     var settingsList = ["Time","Caller","Ringtone & Vibration"]
+    let date = Date()
+    let calendar = Calendar.current
+   
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(HomePageCell.nib, forCellReuseIdentifier: HomePageCell.identifier)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +41,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: HomePageCell.identifier, for: indexPath) as! HomePageCell
         cell.settingsLabel.text = settingsList[indexPath.row]
         cell.settingsImageView.image = imageList[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -44,15 +49,29 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         return 55
     }
     
+    //MARK: selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destinationVC = storyboard?.instantiateViewController(withIdentifier: HomePageCell.identifier) as! 
+        
+        switch indexPath.row {
+        case 0:
+            let destinationVC = storyboard?.instantiateViewController(withIdentifier: TimeViewController.identifier) as! TimeViewController
+            self.navigationController?.pushViewController(destinationVC, animated: true)
+        case 1:
+            let destinationVC1 = storyboard?.instantiateViewController(withIdentifier: "CallerViewController") as! CallerViewController
+            self.navigationController?.pushViewController(destinationVC1, animated: true)
+        case 2:
+            let destinationVC2 = storyboard?.instantiateViewController(withIdentifier: "RingtoneViewController") as! RingtoneViewController
+            self.navigationController?.pushViewController(destinationVC2, animated: true)
+        default:
+            break
+        }
+    
     }
     
     // MARK: Buttons Actions
-
     @IBAction func startCallButton(_ sender: Any) {
-    
+        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "waitView") as UIViewController
+        self.present(vc, animated: true, completion: nil)
     }
-    
-
 }

@@ -8,28 +8,61 @@
 
 import UIKit
 
-class TimeViewController: UIViewController {
+class TimeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var timeList = ["10 Seconds","30 Seconds","1 Minute","5 Minute","1 Hours"]
+    var selectedTime=0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+    }
+    
+    class var identifier: String {
+        return String(describing: self)
+    }
+    
+    class var nib: UINib {
+        return UINib(nibName: identifier, bundle: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timeList.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        cell.textLabel?.text = timeList[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row{
+        case 0:
+        selectedTime = 10
+        case 1:
+            selectedTime = 30
+        case 2:
+            selectedTime = 60
+        case 3:
+            selectedTime = 300
+        case 4:
+            selectedTime = 3600
+        default:
+        break
+        }
+        UserDefaults.standard.set(selectedTime, forKey: "selectedTime")
+    }
+    
 }
