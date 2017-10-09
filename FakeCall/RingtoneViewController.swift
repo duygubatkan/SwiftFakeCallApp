@@ -11,6 +11,8 @@ import AVFoundation
 
 class RingtoneViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var soundOutletSwitch: UISwitch!
+    @IBOutlet weak var vibrationSwitchOutlet: UISwitch!
     @IBOutlet weak var tableView: UITableView!
  
     
@@ -49,15 +51,10 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func soundSwitch(_ sender: UISwitch) {
         if sender.isOn{
             UserDefaults.standard.set(true, forKey: "soundSwitchIsOn")
-        // create a sound ID, in this case its the tweet sound.
-        let systemSoundID: SystemSoundID = 1305
-        // to play sound
-        AudioServicesPlaySystemSound (systemSoundID)
-            print("açık")
-        }
-        else{
+            soundOutletSwitch.setOn(true, animated: true)
+        }else{
             UserDefaults.standard.set(false, forKey: "soundSwitchIsOn")
-            print("kapalı")
+            soundOutletSwitch.setOn(false, animated: true)
         }
         
     }
@@ -65,10 +62,17 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func vibrationSwitch(_ sender: UISwitch) {
         if sender.isOn {
             UserDefaults.standard.set(true, forKey: "vibrationSwitchIsOn")
+            vibrationSwitchOutlet.setOn(true, animated: true)
         }else{
             UserDefaults.standard.set(false, forKey: "vibrationSwitchIsOn")
+            vibrationSwitchOutlet.setOn(false, animated: true)
         }
     }
-    
 }
+/*
+// create a sound ID, in this case its the tweet sound.
+let systemSoundID: SystemSoundID = 1305
+// to play sound
+AudioServicesPlaySystemSound (systemSoundID)
+ */
 
