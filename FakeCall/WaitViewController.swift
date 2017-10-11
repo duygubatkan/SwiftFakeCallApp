@@ -9,21 +9,17 @@
 import UIKit
 
 class WaitViewController: UIViewController {
+    
     var timer = Timer()
-    var selectedSecond:Int = 0
-    
-    
+    var selectedSecond: Int!
+    @IBOutlet weak var infoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let labelString = "The phone will be turned on in \(selectedSecond) seconds, please don't lock the screen and don't press the home button "
+        infoLabel.text = labelString
         selectedSecond = UserDefaults.standard.integer(forKey: "selectedTime")
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-       
-    }
-    
 
     @objc func updateCountDown() {
         if selectedSecond > 0{
@@ -34,9 +30,6 @@ class WaitViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main2", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ringView") as UIViewController
             self.present(vc, animated: true, completion: nil)
-        
         }
-    
     }
-    
 }

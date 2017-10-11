@@ -10,17 +10,22 @@ import UIKit
 
 class TimeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+   
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+
     
     var timeList = ["10 Seconds","30 Seconds","1 Minute","5 Minute","1 Hours"]
     var selectedTime=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+  
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        
+        tableView.tableFooterView = UIView()
     }
     
     class var identifier: String {
@@ -46,6 +51,9 @@ class TimeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row{
@@ -63,6 +71,6 @@ class TimeViewController: UIViewController, UITableViewDelegate, UITableViewData
         break
         }
         UserDefaults.standard.set(selectedTime, forKey: "selectedTime")
-    }
-    
+       
+    }    
 }

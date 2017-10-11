@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		1802567D1F82EBD100DC1021 /* SpeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802567C1F82EBD100DC1021 /* SpeakViewController.swift */; };
 		1802567F1F843EA900DC1021 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802567E1F843EA900DC1021 /* RingViewController.swift */; };
+		180D17DE1F8D8D2D00F892CC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180D17DD1F8D8D2D00F892CC /* Utilities.swift */; };
 		1846E5251F880F9800DAC321 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E5241F880F9800DAC321 /* WaitViewController.swift */; };
 		1881A98B1F8B6E14003AB947 /* FakeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881A98A1F8B6E14003AB947 /* FakeHomeViewController.swift */; };
-		1881A98E1F8BC392003AB947 /* DefaultRingtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1881A98D1F8BBD8F003AB947 /* DefaultRingtone.mp3 */; };
+		1881A98E1F8BC392003AB947 /* default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1881A98D1F8BBD8F003AB947 /* default.mp3 */; };
 		188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA5C1F818191007C216D /* AppDelegate.swift */; };
 		188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA631F818191007C216D /* FakeCall.xcdatamodeld */; };
 		188BEA671F818191007C216D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA661F818191007C216D /* Assets.xcassets */; };
@@ -47,9 +48,13 @@
 /* Begin PBXFileReference section */
 		1802567C1F82EBD100DC1021 /* SpeakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakViewController.swift; sourceTree = "<group>"; };
 		1802567E1F843EA900DC1021 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
+		180D17D91F8D86AE00F892CC /* strum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = strum.mp3; sourceTree = "<group>"; };
+		180D17DA1F8D875000F892CC /* xylophone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xylophone.mp3; sourceTree = "<group>"; };
+		180D17DB1F8D877C00F892CC /* Silk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Silk.mp3; sourceTree = "<group>"; };
+		180D17DD1F8D8D2D00F892CC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1846E5241F880F9800DAC321 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		1881A98A1F8B6E14003AB947 /* FakeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHomeViewController.swift; sourceTree = "<group>"; };
-		1881A98D1F8BBD8F003AB947 /* DefaultRingtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DefaultRingtone.mp3; sourceTree = "<group>"; };
+		1881A98D1F8BBD8F003AB947 /* default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default.mp3; sourceTree = "<group>"; };
 		188BEA591F818191007C216D /* FakeCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188BEA5C1F818191007C216D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188BEA641F818191007C216D /* FakeCall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FakeCall.xcdatamodel; sourceTree = "<group>"; };
@@ -96,10 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180D17DC1F8D8D1400F892CC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				180D17DD1F8D8D2D00F892CC /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1881A98C1F8BBD72003AB947 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1881A98D1F8BBD8F003AB947 /* DefaultRingtone.mp3 */,
+				180D17DB1F8D877C00F892CC /* Silk.mp3 */,
+				180D17DA1F8D875000F892CC /* xylophone.mp3 */,
+				180D17D91F8D86AE00F892CC /* strum.mp3 */,
+				1881A98D1F8BBD8F003AB947 /* default.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -127,6 +143,7 @@
 		188BEA5B1F818191007C216D /* FakeCall */ = {
 			isa = PBXGroup;
 			children = (
+				180D17DC1F8D8D1400F892CC /* Helpers */,
 				188BEA931F819275007C216D /* View */,
 				188BEA5C1F818191007C216D /* AppDelegate.swift */,
 				18CDF8191F81B9AE0037261C /* Main2.storyboard */,
@@ -289,7 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1881A98E1F8BC392003AB947 /* DefaultRingtone.mp3 in Resources */,
+				1881A98E1F8BC392003AB947 /* default.mp3 in Resources */,
 				188BEA6A1F818191007C216D /* LaunchScreen.storyboard in Resources */,
 				188BEA671F818191007C216D /* Assets.xcassets in Resources */,
 				18CDF81B1F81B9AE0037261C /* Main2.storyboard in Resources */,
@@ -324,6 +341,7 @@
 				1881A98B1F8B6E14003AB947 /* FakeHomeViewController.swift in Sources */,
 				1846E5251F880F9800DAC321 /* WaitViewController.swift in Sources */,
 				188BEA9B1F81A25B007C216D /* TimeViewController.swift in Sources */,
+				180D17DE1F8D8D2D00F892CC /* Utilities.swift in Sources */,
 				188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */,
 				188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */,
 				188BEA9F1F81B65F007C216D /* RingtoneViewController.swift in Sources */,

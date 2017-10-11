@@ -11,7 +11,7 @@ import UIKit
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var imageList = [#imageLiteral(resourceName: "img1"),#imageLiteral(resourceName: "img2"),#imageLiteral(resourceName: "img2")]
+    var imageList = [#imageLiteral(resourceName: "time"),#imageLiteral(resourceName: "photo"),#imageLiteral(resourceName: "ifbell")]
     var settingsList = ["Time","Caller","Ringtone & Vibration"]
     let date = Date()
     let calendar = Calendar.current
@@ -41,7 +41,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: HomePageCell.identifier, for: indexPath) as! HomePageCell
         cell.settingsLabel.text = settingsList[indexPath.row]
         cell.settingsImageView.image = imageList[indexPath.row]
-        cell.selectionStyle = .none
+        cell.selectionStyle = .default
         return cell
     }
     

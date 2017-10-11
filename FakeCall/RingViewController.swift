@@ -17,6 +17,7 @@ class RingViewController: UIViewController {
     var player: AVAudioPlayer?
     var soundSwitch: Bool?
     var vibrationSwitch: Bool?
+    var selectedSound: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,15 @@ class RingViewController: UIViewController {
         mobileLabel.text = UserDefaults.standard.string(forKey: "mobileUserDefaults")
         soundSwitch = UserDefaults.standard.bool(forKey: "soundSwitchIsOn")
         vibrationSwitch = UserDefaults.standard.bool(forKey: "vibrationSwitchIsOn")
+        selectedSound = UserDefaults.standard.string(forKey: "selectedSoundName")
         
         if soundSwitch == true {
             playSound()
+            
         }
         if vibrationSwitch == true{
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         }
     }
     
@@ -60,12 +64,15 @@ class RingViewController: UIViewController {
     }
     
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "DefaultRingtone", withExtension: "mp3") else { return }
+        if selectedSound == ""
+        {selectedSound = "default"}
+        guard let url = Bundle.main.url(forResource: selectedSound, withExtension: "mp3") else { return }
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             player = try AVAudioPlayer(contentsOf: url)
             guard let player = player else { return }
+            player.numberOfLoops = -1
             player.play()
         } catch let error {
             print(error.localizedDescription)
