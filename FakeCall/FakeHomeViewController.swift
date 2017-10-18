@@ -36,7 +36,6 @@ class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func handleSingleTap() {
         Utilities.toastView(messsage: "click twice to return to the main screen", view: self.view)
-   
         
     }
     @objc func handleDoubleTap() {
