@@ -10,9 +10,14 @@
 		1802567D1F82EBD100DC1021 /* SpeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802567C1F82EBD100DC1021 /* SpeakViewController.swift */; };
 		1802567F1F843EA900DC1021 /* RingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1802567E1F843EA900DC1021 /* RingViewController.swift */; };
 		180D17DE1F8D8D2D00F892CC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180D17DD1F8D8D2D00F892CC /* Utilities.swift */; };
+		1822C1481F929C2600FD06B0 /* RingtoneVibrationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C1461F929C2600FD06B0 /* RingtoneVibrationTableViewCell.swift */; };
+		1822C1491F929C2600FD06B0 /* RingtoneVibrationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1822C1471F929C2600FD06B0 /* RingtoneVibrationTableViewCell.xib */; };
 		1846E5251F880F9800DAC321 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846E5241F880F9800DAC321 /* WaitViewController.swift */; };
+		1868230C1F95F8DA009FDBD5 /* Default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 186823091F95F575009FDBD5 /* Default.mp3 */; };
+		1868230D1F95F8DA009FDBD5 /* Silk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 186823081F95F575009FDBD5 /* Silk.mp3 */; };
+		1868230E1F95F8DA009FDBD5 /* Strum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1868230B1F95F575009FDBD5 /* Strum.mp3 */; };
+		1868230F1F95F8DA009FDBD5 /* Xylophone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1868230A1F95F575009FDBD5 /* Xylophone.mp3 */; };
 		1881A98B1F8B6E14003AB947 /* FakeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881A98A1F8B6E14003AB947 /* FakeHomeViewController.swift */; };
-		1881A98E1F8BC392003AB947 /* default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1881A98D1F8BBD8F003AB947 /* default.mp3 */; };
 		188BEA5D1F818191007C216D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA5C1F818191007C216D /* AppDelegate.swift */; };
 		188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA631F818191007C216D /* FakeCall.xcdatamodeld */; };
 		188BEA671F818191007C216D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188BEA661F818191007C216D /* Assets.xcassets */; };
@@ -26,6 +31,7 @@
 		188BEA9D1F81AFFE007C216D /* CallerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA9C1F81AFFE007C216D /* CallerViewController.swift */; };
 		188BEA9F1F81B65F007C216D /* RingtoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BEA9E1F81B65F007C216D /* RingtoneViewController.swift */; };
 		18CDF81B1F81B9AE0037261C /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CDF8191F81B9AE0037261C /* Main2.storyboard */; };
+		18D51EC61F940FF700A2E9AC /* GlobalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D51EC51F940FF700A2E9AC /* GlobalValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +54,15 @@
 /* Begin PBXFileReference section */
 		1802567C1F82EBD100DC1021 /* SpeakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakViewController.swift; sourceTree = "<group>"; };
 		1802567E1F843EA900DC1021 /* RingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingViewController.swift; sourceTree = "<group>"; };
-		180D17D91F8D86AE00F892CC /* strum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = strum.mp3; sourceTree = "<group>"; };
-		180D17DA1F8D875000F892CC /* xylophone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xylophone.mp3; sourceTree = "<group>"; };
-		180D17DB1F8D877C00F892CC /* Silk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Silk.mp3; sourceTree = "<group>"; };
 		180D17DD1F8D8D2D00F892CC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		1822C1461F929C2600FD06B0 /* RingtoneVibrationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneVibrationTableViewCell.swift; sourceTree = "<group>"; };
+		1822C1471F929C2600FD06B0 /* RingtoneVibrationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RingtoneVibrationTableViewCell.xib; sourceTree = "<group>"; };
 		1846E5241F880F9800DAC321 /* WaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
+		186823081F95F575009FDBD5 /* Silk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Silk.mp3; sourceTree = "<group>"; };
+		186823091F95F575009FDBD5 /* Default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Default.mp3; sourceTree = "<group>"; };
+		1868230A1F95F575009FDBD5 /* Xylophone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Xylophone.mp3; sourceTree = "<group>"; };
+		1868230B1F95F575009FDBD5 /* Strum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Strum.mp3; sourceTree = "<group>"; };
 		1881A98A1F8B6E14003AB947 /* FakeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHomeViewController.swift; sourceTree = "<group>"; };
-		1881A98D1F8BBD8F003AB947 /* default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default.mp3; sourceTree = "<group>"; };
 		188BEA591F818191007C216D /* FakeCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188BEA5C1F818191007C216D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188BEA641F818191007C216D /* FakeCall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FakeCall.xcdatamodel; sourceTree = "<group>"; };
@@ -74,6 +82,7 @@
 		188BEA9C1F81AFFE007C216D /* CallerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerViewController.swift; sourceTree = "<group>"; };
 		188BEA9E1F81B65F007C216D /* RingtoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingtoneViewController.swift; sourceTree = "<group>"; };
 		18CDF81A1F81B9AE0037261C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main2.storyboard; sourceTree = "<group>"; };
+		18D51EC51F940FF700A2E9AC /* GlobalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,17 +114,29 @@
 			isa = PBXGroup;
 			children = (
 				180D17DD1F8D8D2D00F892CC /* Utilities.swift */,
+				18D51EC51F940FF700A2E9AC /* GlobalValues.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1822C13C1F92370900FD06B0 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				188BEA5C1F818191007C216D /* AppDelegate.swift */,
+				188BEA631F818191007C216D /* FakeCall.xcdatamodeld */,
+				188BEA681F818191007C216D /* LaunchScreen.storyboard */,
+				188BEA661F818191007C216D /* Assets.xcassets */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 		1881A98C1F8BBD72003AB947 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				180D17DB1F8D877C00F892CC /* Silk.mp3 */,
-				180D17DA1F8D875000F892CC /* xylophone.mp3 */,
-				180D17D91F8D86AE00F892CC /* strum.mp3 */,
-				1881A98D1F8BBD8F003AB947 /* default.mp3 */,
+				186823091F95F575009FDBD5 /* Default.mp3 */,
+				186823081F95F575009FDBD5 /* Silk.mp3 */,
+				1868230B1F95F575009FDBD5 /* Strum.mp3 */,
+				1868230A1F95F575009FDBD5 /* Xylophone.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -123,6 +144,7 @@
 		188BEA501F818191007C216D = {
 			isa = PBXGroup;
 			children = (
+				1822C13C1F92370900FD06B0 /* Supports */,
 				188BEA5B1F818191007C216D /* FakeCall */,
 				188BEA731F818191007C216D /* FakeCallTests */,
 				188BEA7E1F818191007C216D /* FakeCallUITests */,
@@ -145,13 +167,8 @@
 			children = (
 				180D17DC1F8D8D1400F892CC /* Helpers */,
 				188BEA931F819275007C216D /* View */,
-				188BEA5C1F818191007C216D /* AppDelegate.swift */,
 				18CDF8191F81B9AE0037261C /* Main2.storyboard */,
 				188BEA8D1F818342007C216D /* HomePageViewController.swift */,
-				188BEA661F818191007C216D /* Assets.xcassets */,
-				188BEA681F818191007C216D /* LaunchScreen.storyboard */,
-				188BEA6B1F818191007C216D /* Info.plist */,
-				188BEA631F818191007C216D /* FakeCall.xcdatamodeld */,
 				188BEA9A1F81A25B007C216D /* TimeViewController.swift */,
 				188BEA9C1F81AFFE007C216D /* CallerViewController.swift */,
 				188BEA9E1F81B65F007C216D /* RingtoneViewController.swift */,
@@ -159,6 +176,7 @@
 				1802567E1F843EA900DC1021 /* RingViewController.swift */,
 				1846E5241F880F9800DAC321 /* WaitViewController.swift */,
 				1881A98A1F8B6E14003AB947 /* FakeHomeViewController.swift */,
+				188BEA6B1F818191007C216D /* Info.plist */,
 				1881A98C1F8BBD72003AB947 /* Resources */,
 			);
 			path = FakeCall;
@@ -195,6 +213,8 @@
 			children = (
 				188BEA951F819318007C216D /* HomePageCell.swift */,
 				188BEA961F819318007C216D /* HomePageCell.xib */,
+				1822C1461F929C2600FD06B0 /* RingtoneVibrationTableViewCell.swift */,
+				1822C1471F929C2600FD06B0 /* RingtoneVibrationTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -267,7 +287,7 @@
 				TargetAttributes = {
 					188BEA581F818191007C216D = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					188BEA6F1F818191007C216D = {
 						CreatedOnToolsVersion = 9.0;
@@ -306,7 +326,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1881A98E1F8BC392003AB947 /* default.mp3 in Resources */,
+				1868230C1F95F8DA009FDBD5 /* Default.mp3 in Resources */,
+				1868230D1F95F8DA009FDBD5 /* Silk.mp3 in Resources */,
+				1868230E1F95F8DA009FDBD5 /* Strum.mp3 in Resources */,
+				1868230F1F95F8DA009FDBD5 /* Xylophone.mp3 in Resources */,
+				1822C1491F929C2600FD06B0 /* RingtoneVibrationTableViewCell.xib in Resources */,
 				188BEA6A1F818191007C216D /* LaunchScreen.storyboard in Resources */,
 				188BEA671F818191007C216D /* Assets.xcassets in Resources */,
 				18CDF81B1F81B9AE0037261C /* Main2.storyboard in Resources */,
@@ -340,6 +364,8 @@
 				188BEA9D1F81AFFE007C216D /* CallerViewController.swift in Sources */,
 				1881A98B1F8B6E14003AB947 /* FakeHomeViewController.swift in Sources */,
 				1846E5251F880F9800DAC321 /* WaitViewController.swift in Sources */,
+				1822C1481F929C2600FD06B0 /* RingtoneVibrationTableViewCell.swift in Sources */,
+				18D51EC61F940FF700A2E9AC /* GlobalValues.swift in Sources */,
 				188BEA9B1F81A25B007C216D /* TimeViewController.swift in Sources */,
 				180D17DE1F8D8D2D00F892CC /* Utilities.swift in Sources */,
 				188BEA651F818191007C216D /* FakeCall.xcdatamodeld in Sources */,
@@ -449,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -500,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -512,14 +538,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4G6N3C3LBE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 48Q8C9UQ6J;
 				INFOPLIST_FILE = FakeCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = brainapp.FakeCall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brainapp.fakecall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "66504038-e018-4b17-b46d-48e6ed2ee7b2";
+				PROVISIONING_PROFILE_SPECIFIER = "FakeCall (Dev.)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -527,14 +556,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4G6N3C3LBE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 48Q8C9UQ6J;
 				INFOPLIST_FILE = FakeCall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = brainapp.FakeCall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brainapp.fakecall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3c8fb7b7-d7b4-4a29-9052-c2fe82e3ba4a";
+				PROVISIONING_PROFILE_SPECIFIER = "FakeCall (Dist.)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

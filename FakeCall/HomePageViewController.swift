@@ -15,8 +15,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var settingsList = ["Time","Caller","Ringtone & Vibration"]
     let date = Date()
     let calendar = Calendar.current
-   
-
+   @IBOutlet weak var startButtonOutlet: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -24,6 +24,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(HomePageCell.nib, forCellReuseIdentifier: HomePageCell.identifier)
+        startButtonOutlet.backgroundColor = UIColor.init(red: 0/255, green: 185/255, blue: 199/255, alpha: 1)
+        startButtonOutlet.layer.cornerRadius = 10
+       
+      
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,15 +38,17 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     // MARK: TableView Delegation
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return settingsList.count
+        //listenden kaç tanesini döndüreceği
+        return imageList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: HomePageCell.identifier, for: indexPath) as! HomePageCell
         cell.settingsLabel.text = settingsList[indexPath.row]
         cell.settingsImageView.image = imageList[indexPath.row]
-        cell.selectionStyle = .default
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -70,8 +77,30 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: Buttons Actions
     @IBAction func startCallButton(_ sender: Any) {
+        if UserDefaults.standard.integer(forKey: "selectedTime") == 0{
+            UserDefaults.standard.set(10, forKey: "selectedTime")
+        }
+        if UserDefaults.standard.string(forKey: "selectedSoundName") == nil{
+            UserDefaults.standard.set("Default", forKey: "selectedSoundName")
+        }
+        if UserDefaults.standard.string(forKey: "nameUserDefaults") == nil {
+           alertDialog(messageText: "please fill in the name space")
+        }
+        if UserDefaults.standard.string(forKey: "mobileUserDefaults") == nil{
+            alertDialog(messageText: "please fill in the type space")
+        }else{
         let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "waitView") as UIViewController
-        self.present(vc, animated: true, completion: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "waitView") as UIViewController
+        self.present(viewController, animated: true, completion: nil)
+        }
     }
+    
+    func alertDialog(messageText: String){
+        let alertController = UIAlertController(title: "", message: messageText, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Close", style: .cancel)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+   
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
- import AudioToolbox
+import AudioToolbox
 
 class RingViewController: UIViewController {
 
@@ -26,14 +26,15 @@ class RingViewController: UIViewController {
         soundSwitch = UserDefaults.standard.bool(forKey: "soundSwitchIsOn")
         vibrationSwitch = UserDefaults.standard.bool(forKey: "vibrationSwitchIsOn")
         selectedSound = UserDefaults.standard.string(forKey: "selectedSoundName")
-        
+       
+
         if soundSwitch == true {
             playSound()
-            
         }
+        
         if vibrationSwitch == true{
-            //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            //AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         }
     }
     
@@ -64,9 +65,11 @@ class RingViewController: UIViewController {
     }
     
     func playSound() {
-        if selectedSound == ""
-        {selectedSound = "default"}
-        guard let url = Bundle.main.url(forResource: selectedSound, withExtension: "mp3") else { return }
+        if selectedSound == ""{
+            selectedSound = "Default"
+        }else{
+           guard let url = Bundle.main.url(forResource: selectedSound, withExtension: "mp3") else { print("here")
+            return }
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -76,7 +79,9 @@ class RingViewController: UIViewController {
             player.play()
         } catch let error {
             print(error.localizedDescription)
+            }
         }
+        
     }
 }
     

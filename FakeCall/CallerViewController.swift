@@ -16,30 +16,42 @@ class CallerViewController: UIViewController , UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        mobileTextField.text =  UserDefaults.standard.string(forKey: "mobileUserDefaults")
+        nameTextField.text = UserDefaults.standard.string(forKey: "nameUserDefaults")
+        UserDefaults.standard.integer(forKey: "selectedTime")
+        navigationItem.title = "Caller"
         self.hideKeyboardWhenTappedAround()
-        
         mobileTextField.delegate = self
         nameTextField.delegate = self
+        
+        //MARK: Right Button Navigation
+        let rightButtonItem = UIBarButtonItem.init(
+            title: "Save",
+            style: .done,
+            target: self,
+            action: #selector(rightButtonTapped)
+        )
+        self.navigationItem.rightBarButtonItem = rightButtonItem
+        
+    }
+    
+    @objc func rightButtonTapped() {
+        if mobileTextField.text == "" || nameTextField.text == "" {
+            let alertController = UIAlertController(title: "", message: "please fill in the blank", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Close", style: .cancel)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true, completion: nil)
+            
+        }else{
+            UserDefaults.standard.set(mobileTextField.text, forKey: "mobileUserDefaults")
+            UserDefaults.standard.set(nameTextField.text, forKey: "nameUserDefaults")
+            Utilities.toastView(messsage: "name and kind saved", view: self.view)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-  
-    @IBAction func saveButton(_ sender: Any) {
-        if mobileTextField.text == "" || nameTextField.text == "" {
-            let alertController = UIAlertController(title: "", message: "please fill in the blank", preferredStyle: .alert)
-             let cancelAction = UIAlertAction(title: "Close", style: .cancel)
-             alertController.addAction(cancelAction)
-             present(alertController, animated: true, completion: nil)
-            
-        }else{
-        UserDefaults.standard.set(mobileTextField.text, forKey: "mobileUserDefaults")
-        UserDefaults.standard.set(nameTextField.text, forKey: "nameUserDefaults")
-        Utilities.toastView(messsage: "name and kind saved", view: self.view)
-        }
     }
     
     //MARK: TextField Delegation
@@ -57,5 +69,3 @@ class CallerViewController: UIViewController , UITextFieldDelegate {
         
         return Utilities.enableKeyboardforNext(textField: textField)
     }
-    
-}

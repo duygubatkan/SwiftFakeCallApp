@@ -14,26 +14,20 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var soundOutletSwitch: UISwitch!
     @IBOutlet weak var vibrationSwitchOutlet: UISwitch!
     @IBOutlet weak var tableView: UITableView!
-    var playList = ["default","silk","strum","xylophone"]
- 
     
+    var playList = ["Default", "Silk", "Strum", "Xylophone"]
+    var settings = ["Ringtone", "Vibration"]
+    var settingsBool = [false, false]
+    var ringtoneUserDefault: Int?
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Ringtone & Vibration"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
-        
-        if UserDefaults.standard.bool(forKey: "soundSwitchIsOn") == true{
-            soundOutletSwitch.setOn(true, animated: true)
-        }else{
-            soundOutletSwitch.setOn(false, animated: true)
-        }
-        if UserDefaults.standard.bool(forKey: "vibrationSwitchIsOn") == true{
-            vibrationSwitchOutlet.setOn(true, animated: true)
-        }else{
-            vibrationSwitchOutlet.setOn(false, animated: true)
-        }
+        tableView.register(RingtoneVibrationTableViewCell.nib, forCellReuseIdentifier: RingtoneVibrationTableViewCell.identifier)
+        ringtoneUserDefault = UserDefaults.standard.integer(forKey: "selectedRowSound")
        
        
     }
@@ -44,20 +38,81 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
    
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch (section) {
+        case 0:
+            return "Select Ringtone"
+        default:
+            return ""
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        switch section {
+        case 0:
+            return 2
+        default:
+            return 4
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = playList[indexPath.row]
-        cell.selectionStyle = .default
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: RingtoneVibrationTableViewCell.identifier, for: indexPath) as! RingtoneVibrationTableViewCell
+            cell.labelName.text = settings[indexPath.row]
+           // cell.switchOutlet.isOn = settingsBool[indexPath.row]
+            
+            if indexPath.row == 0 {
+                cell.isRingtone = true
+                 cell.switchOutlet.setOn(UserDefaults.standard.bool(forKey: "soundSwitchIsOn"), animated: true)
+            } else {
+                cell.isRingtone = false
+                cell.switchOutlet.setOn(UserDefaults.standard.bool(forKey: "vibrationSwitchIsOn"), animated: true)
+            }
+      
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+            cell.textLabel?.text = playList[indexPath.row]
+            cell.selectionStyle = .none
+            if indexPath.row == ringtoneUserDefault {
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            }else{
+                cell.accessoryType = UITableViewCellAccessoryType.none
+            }
+            return cell
+        }
     }
+   
+    
+    
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        //clear cellForRowAt cell checkmarks
+        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
+            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
+                cell.accessoryType = row == indexPath.row ? .checkmark : .none
+            }
+        }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
+            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
+                cell.accessoryType = row == indexPath.row ? .checkmark : .none
+            }
+        }
+        if indexPath.section == 1
+        {
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
+        }else{
+        tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
+        }
         switch indexPath.row {
         case 0:
             UserDefaults.standard.set(playList[0], forKey: "selectedSoundName")
@@ -69,27 +124,31 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
             UserDefaults.standard.set(playList[3], forKey: "selectedSoundName")
         default:
             break
-    }
+        }
+        UserDefaults.standard.set(indexPath.row, forKey: "selectedRowSound")
 }
     
 
-    @IBAction func soundSwitch(_ sender: UISwitch) {
-        if sender.isOn{
-            UserDefaults.standard.set(true, forKey: "soundSwitchIsOn")
-        }else{
-            UserDefaults.standard.set(false, forKey: "soundSwitchIsOn")
-        }
-        
-    }
-    
-    @IBAction func vibrationSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            UserDefaults.standard.set(true, forKey: "vibrationSwitchIsOn")
-        }else{
-            UserDefaults.standard.set(false, forKey: "vibrationSwitchIsOn")
-        }
-    }
+//    @IBAction func soundSwitch(_ sender: UISwitch) {
+//        if sender.isOn{
+//            UserDefaults.standard.set(true, forKey: "soundSwitchIsOn")
+//        }else{
+//            UserDefaults.standard.set(false, forKey: "soundSwitchIsOn")
+//        }
+//
+//    }
+//
+//    @IBAction func vibrationSwitch(_ sender: UISwitch) {
+//        if sender.isOn {
+//            UserDefaults.standard.set(true, forKey: "vibrationSwitchIsOn")
+//        }else{
+//            UserDefaults.standard.set(false, forKey: "vibrationSwitchIsOn")
+//        }
+//    }
 }
+
+
+
 /*
 // create a sound ID, in this case its the tweet sound.
 let systemSoundID: SystemSoundID = 1305
