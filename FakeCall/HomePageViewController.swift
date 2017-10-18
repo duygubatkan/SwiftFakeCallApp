@@ -24,23 +24,18 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(HomePageCell.nib, forCellReuseIdentifier: HomePageCell.identifier)
+        //MARK: button color and radius
         startButtonOutlet.backgroundColor = UIColor.init(red: 0/255, green: 185/255, blue: 199/255, alpha: 1)
         startButtonOutlet.layer.cornerRadius = 10
-       
-      
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     
     // MARK: TableView Delegation
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        //listenden kaç tanesini döndüreceği
         return imageList.count
     }
     
@@ -56,9 +51,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         return 55
     }
     
-    //MARK: selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         switch indexPath.row {
         case 0:
             let destinationVC = storyboard?.instantiateViewController(withIdentifier: TimeViewController.identifier) as! TimeViewController
@@ -75,7 +68,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     }
     
-    // MARK: Buttons Actions
+    // MARK: Button Action/Empty control
     @IBAction func startCallButton(_ sender: Any) {
         if UserDefaults.standard.integer(forKey: "selectedTime") == 0{
             UserDefaults.standard.set(10, forKey: "selectedTime")
@@ -84,23 +77,15 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             UserDefaults.standard.set("Default", forKey: "selectedSoundName")
         }
         if UserDefaults.standard.string(forKey: "nameUserDefaults") == nil {
-           alertDialog(messageText: "please fill in the name space")
+           Utilities.createAlertController(viewController: self, title: "", message: "please fill in the name space", actionTitle: "Close")
         }
         if UserDefaults.standard.string(forKey: "mobileUserDefaults") == nil{
-            alertDialog(messageText: "please fill in the type space")
+            Utilities.createAlertController(viewController: self, title: "", message: "please fill in the type space", actionTitle: "Close")
         }else{
-        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "waitView") as UIViewController
-        self.present(viewController, animated: true, completion: nil)
+            Utilities.passNewViewController(viewIdentifier: "waitView", viewC: self)
         }
     }
     
-    func alertDialog(messageText: String){
-        let alertController = UIAlertController(title: "", message: messageText, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Close", style: .cancel)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)
-    }
     
    
 }

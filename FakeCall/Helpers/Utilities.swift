@@ -11,12 +11,27 @@ import UIKit
 
 class Utilities {
     
+    //MARK: clear cell checkmarks from cellForRowAt for didSelect and didDeselect Funciton
+    open static func clearCheckmark(indexPath: IndexPath, tableView: UITableView){
+        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
+            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
+                cell.accessoryType = row == indexPath.row ? .checkmark : .none
+            }
+        }
+    }
+    
+    
+    open static func passNewViewController(viewIdentifier: String, viewC: UIViewController){
+        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewIdentifier) as UIViewController
+        viewC.present(viewController, animated: true, completion: nil)
+    }
+    
+
     open static func createAlertController(viewController: UIViewController, title: String, message: String, actionTitle: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
         let defaultAction = UIAlertAction(title: actionTitle, style: .default, handler: nil)
         alertController.addAction(defaultAction)
-        
         viewController.present(alertController, animated: true, completion: nil)
     }
     

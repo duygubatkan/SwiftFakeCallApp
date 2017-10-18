@@ -26,12 +26,9 @@ class RingViewController: UIViewController {
         soundSwitch = UserDefaults.standard.bool(forKey: "soundSwitchIsOn")
         vibrationSwitch = UserDefaults.standard.bool(forKey: "vibrationSwitchIsOn")
         selectedSound = UserDefaults.standard.string(forKey: "selectedSoundName")
-       
-
         if soundSwitch == true {
             playSound()
         }
-        
         if vibrationSwitch == true{
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
             //AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
@@ -47,7 +44,6 @@ class RingViewController: UIViewController {
             player?.stop()
             player = nil
         }
-        //open new screen
         let storyboard = UIStoryboard(name: "Main2", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "fakeHomeView") as UIViewController
         self.present(vc, animated: true, completion: nil)
@@ -58,10 +54,7 @@ class RingViewController: UIViewController {
             player?.stop()
             player = nil
         }
-        //open new screen
-        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "speakView") as UIViewController
-        self.present(vc, animated: true, completion: nil)
+        Utilities.passNewViewController(viewIdentifier: "speakView", viewC: self)
     }
     
     func playSound() {
@@ -81,7 +74,6 @@ class RingViewController: UIViewController {
             print(error.localizedDescription)
             }
         }
-        
     }
 }
     

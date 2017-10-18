@@ -14,7 +14,6 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var soundOutletSwitch: UISwitch!
     @IBOutlet weak var vibrationSwitchOutlet: UISwitch!
     @IBOutlet weak var tableView: UITableView!
-    
     var playList = ["Default", "Silk", "Strum", "Xylophone"]
     var settings = ["Ringtone", "Vibration"]
     var settingsBool = [false, false]
@@ -28,15 +27,12 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         tableView.register(RingtoneVibrationTableViewCell.nib, forCellReuseIdentifier: RingtoneVibrationTableViewCell.identifier)
         ringtoneUserDefault = UserDefaults.standard.integer(forKey: "selectedRowSound")
-       
-       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -64,8 +60,6 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: RingtoneVibrationTableViewCell.identifier, for: indexPath) as! RingtoneVibrationTableViewCell
             cell.labelName.text = settings[indexPath.row]
-           // cell.switchOutlet.isOn = settingsBool[indexPath.row]
-            
             if indexPath.row == 0 {
                 cell.isRingtone = true
                  cell.switchOutlet.setOn(UserDefaults.standard.bool(forKey: "soundSwitchIsOn"), animated: true)
@@ -73,7 +67,6 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
                 cell.isRingtone = false
                 cell.switchOutlet.setOn(UserDefaults.standard.bool(forKey: "vibrationSwitchIsOn"), animated: true)
             }
-      
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
@@ -88,25 +81,13 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
    
-    
-    
-    
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        //clear cellForRowAt cell checkmarks
-        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
-            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
-                cell.accessoryType = row == indexPath.row ? .checkmark : .none
-            }
-        }
+        Utilities.clearCheckmark(indexPath: indexPath, tableView: tableView)
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
-            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
-                cell.accessoryType = row == indexPath.row ? .checkmark : .none
-            }
-        }
+        Utilities.clearCheckmark(indexPath: indexPath, tableView: tableView)
         if indexPath.section == 1
         {
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
@@ -126,25 +107,7 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
             break
         }
         UserDefaults.standard.set(indexPath.row, forKey: "selectedRowSound")
-}
-    
-
-//    @IBAction func soundSwitch(_ sender: UISwitch) {
-//        if sender.isOn{
-//            UserDefaults.standard.set(true, forKey: "soundSwitchIsOn")
-//        }else{
-//            UserDefaults.standard.set(false, forKey: "soundSwitchIsOn")
-//        }
-//
-//    }
-//
-//    @IBAction func vibrationSwitch(_ sender: UISwitch) {
-//        if sender.isOn {
-//            UserDefaults.standard.set(true, forKey: "vibrationSwitchIsOn")
-//        }else{
-//            UserDefaults.standard.set(false, forKey: "vibrationSwitchIsOn")
-//        }
-//    }
+    }
 }
 
 

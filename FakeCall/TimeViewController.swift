@@ -13,7 +13,7 @@ class TimeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     var timeList = ["10 Seconds","30 Seconds","1 Minute","5 Minute","1 Hours"]
-    var selectedTime=0
+    var selectedTime = 0
     var timeInUserDefault: Int?
     
     override func viewDidLoad() {
@@ -60,22 +60,12 @@ class TimeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        //clear cellForRowAt cell checkmarks
-        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
-            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
-                cell.accessoryType = row == indexPath.row ? .checkmark : .none
-            }
-        }
+        Utilities.clearCheckmark(indexPath: indexPath, tableView: tableView)
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         //clear cellForRowAt cell checkmarks
-        for row in 0..<tableView.numberOfRows(inSection: indexPath.section) {
-            if let cell = tableView.cellForRow(at: IndexPath(row: row, section: indexPath.section)) {
-                cell.accessoryType = row == indexPath.row ? .checkmark : .none
-            }
-        }
+        Utilities.clearCheckmark(indexPath: indexPath, tableView: tableView)
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.checkmark
         switch indexPath.row{
         case 0:

@@ -11,9 +11,9 @@ import UIKit
 class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet var homePageImage: UIImageView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tapGestureSetup()
     }
     
@@ -41,15 +41,10 @@ class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)*/
         
-        
     }
     @objc func handleDoubleTap() {
-        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "navigationControl") as UIViewController
-        self.present(vc, animated: true, completion: nil)
+       Utilities.passNewViewController(viewIdentifier: "navigationControl", viewC: self)
     }
-    
-    
 }
     
 

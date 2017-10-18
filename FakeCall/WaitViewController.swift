@@ -10,14 +10,13 @@ import UIKit
 
 class WaitViewController: UIViewController {
     var selectedTime: String!
-    
     var timer = Timer()
     var selectedSecond: Int!
     @IBOutlet weak var infoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedSecond = UserDefaults.standard.integer(forKey: "selectedTime")
-        
         switch selectedSecond {
         case 10:
             selectedTime = "10 seconds"
@@ -32,22 +31,18 @@ class WaitViewController: UIViewController {
         default:
             break
         }
-        
-        
         let labelString = "The phone will be turned on in \(selectedTime!), please don't lock the screen and don't press the home button "
         infoLabel.text = labelString
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
     }
 
+    
     @objc func updateCountDown() {
         if selectedSecond > 0{
             selectedSecond = selectedSecond - 1
         }else{
             timer.invalidate()
-            //open new screen
-            let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ringView") as UIViewController
-            self.present(vc, animated: true, completion: nil)
+            Utilities.passNewViewController(viewIdentifier: "ringView", viewC: self)
         }
     }
 }

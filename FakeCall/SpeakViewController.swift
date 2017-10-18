@@ -54,10 +54,6 @@ class SpeakViewController: UIViewController {
     
     @IBAction func endCallButton(_ sender: Any) {
         timer.invalidate()
-        //open new screen
-        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "fakeHomeView") as UIViewController
-        self.present(vc, animated: true, completion: nil)
-        
+        Utilities.passNewViewController(viewIdentifier: "fakeHomeView", viewC: self)
     }
 }
