@@ -36,10 +36,7 @@ class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func handleSingleTap() {
         Utilities.toastView(messsage: "click twice to return to the main screen", view: self.view)
-        /*let alertController = UIAlertController(title: "", message: "click twice to return to the main screen", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Close", style: .cancel)
-        alertController.addAction(cancelAction)
-        present(alertController, animated: true, completion: nil)*/
+   
         
     }
     @objc func handleDoubleTap() {

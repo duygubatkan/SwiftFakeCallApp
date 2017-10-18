@@ -47,20 +47,3 @@ class CallerViewController: UIViewController , UITextFieldDelegate {
 }
 
 
-
-
-    //MARK: TextField
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        switch textField.tag {
-//        case 1:
-//            //1. den sonra nexte basıldı
-//            UserDefaults.standard.set(nameTextField.text, forKey: "nameUserDefaults")
-//        case 2:
-//            UserDefaults.standard.set(mobileTextField.text, forKey: "mobileUserDefaults")
-//          // 2.den sonra nexte basıldı
-//        default:
-//            break
-//        }
-//      return Utilities.enableKeyboardforNext(textField: textField)
-//    }
-

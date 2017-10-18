@@ -110,12 +110,3 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 }
 
-
-
-/*
-// create a sound ID, in this case its the tweet sound.
-let systemSoundID: SystemSoundID = 1305
-// to play sound
-AudioServicesPlaySystemSound (systemSoundID)
- */
-
