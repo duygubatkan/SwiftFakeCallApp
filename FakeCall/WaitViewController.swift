@@ -42,7 +42,7 @@ class WaitViewController: UIViewController {
             selectedSecond = selectedSecond - 1
         }else{
             timer.invalidate()
-            Utilities.passNewViewController(viewIdentifier: "ringView", viewC: self)
+            Utilities.passNewViewController(viewIdentifier: "myRingView", viewC: self)
         }
     }
 }

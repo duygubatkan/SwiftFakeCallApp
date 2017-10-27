@@ -15,12 +15,14 @@ class RingtoneViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var vibrationSwitchOutlet: UISwitch!
     @IBOutlet weak var tableView: UITableView!
     var playList = ["Default", "Silk", "Strum", "Xylophone"]
+    
     var settings = ["Ringtone", "Vibration"]
     var settingsBool = [false, false]
     var ringtoneUserDefault: Int?
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Ringtone & Vibration"
         tableView.delegate = self
         tableView.dataSource = self

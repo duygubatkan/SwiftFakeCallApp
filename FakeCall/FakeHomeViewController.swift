@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet var homePageImage: UIImageView!
-   
+    var interstitial: GADInterstitial!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureSetup()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3040308963093338/1707372228")
+        let request = GADRequest()
+        interstitial.load(request)
+        if interstitial.isReady {interstitial.present(fromRootViewController: self)
+        }
+    
+    
     }
     
     //MARK: Setups & Configurations
@@ -39,6 +48,9 @@ class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     @objc func handleDoubleTap() {
        Utilities.passNewViewController(viewIdentifier: "navigationControl", viewC: self)
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
     }
 }
     

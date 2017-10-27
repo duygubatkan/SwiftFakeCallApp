@@ -44,9 +44,8 @@ class RingViewController: UIViewController {
             player?.stop()
             player = nil
         }
-        let storyboard = UIStoryboard(name: "Main2", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "fakeHomeView") as UIViewController
-        self.present(vc, animated: true, completion: nil)
+        Utilities.passNewViewController(viewIdentifier: "fakeHomeView", viewC: self)
+        
     }
 
     @IBAction func acceptButton(_ sender: Any) {
