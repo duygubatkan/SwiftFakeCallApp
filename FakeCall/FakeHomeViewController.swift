@@ -17,12 +17,12 @@ class FakeHomeViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tapGestureSetup()
+        //MARK: interstitial ad
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-3040308963093338/1707372228")
         let request = GADRequest()
         interstitial.load(request)
         if interstitial.isReady {interstitial.present(fromRootViewController: self)
         }
-    
     
     }
     
